@@ -6,11 +6,11 @@ function start(route, handle) {
 		var pathname = url.parse(request.url).pathname; 
 		console.log("Request for " + pathname + " received beutch.");
 			
-			route(handle, pathname);
+			route(handle, pathname, response);
 
-		response.writeHead(200,{"Content-type": "text/plain"});
-		response.write("Hello" + pathname + "World");
-		response.end();		
+		// response.writeHead(200,{"Content-type": "text/plain"});
+		// response.write("Hello" + pathname + "World");
+		// response.end();		
 	}
 
 	http.createServer(onRequest).listen(8888);
